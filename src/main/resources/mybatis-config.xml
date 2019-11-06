@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+    <!-- settings -->
+    <settings>
+        <!--有数据库的经典命名自动转化成java经典的驼峰式命名  ,默认为false-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
+    <!--PageHelper分页插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--由于这个插件支持多种数据库，需要指定是哪种数据库-->
+            <property name="helperDialect" value="mysql"></property>
+            <property name="reasonable" value="true"></property>
+        </plugin>
+    </plugins>
+
+
+</configuration>
+
+
+
